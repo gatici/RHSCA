@@ -1,0 +1,7 @@
+Create a logical volume of 200MB called lv_swap2 and add it permanently to the current swap space.
+
+lvcreate --size 200M --name lv_swap2 /dev/vg
+mkswap  /dev/vg/lv_Swap2
+swapon  /dev/vg/lv_Swap2
+vi /etc/fstab
+/dev/vg/lv_swap2  swap swap  defaults 0 0
