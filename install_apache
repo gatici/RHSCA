@@ -1,3 +1,4 @@
+Install the Apache package. Allow it to get documents stored on NFS mounted directories.
 yum install -y httpd
 firewall-cmd --permanent --add-service=http
 firewall-cmd --reload
