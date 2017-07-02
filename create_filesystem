@@ -1,0 +1,10 @@
+Create a xfs file system on a new logical volume of 100MB called lv_xfs. 
+Mount it permanently with uuid under /xfs.
+
+lvcreate --size 100M --name lv_xfs  /dev/vg
+mkfs.xfs  /dev/vg/lv_xfs
+mkdir  /xfs
+blkid | grep lv_xfs >> /etc/fstab
+vi /etc/fstab
+UUID=... xfs  xfs defaults 1 2
+mount -a
