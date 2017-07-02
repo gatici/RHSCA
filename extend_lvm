@@ -5,3 +5,17 @@ umount /xfs
 xfs_admin  -L "myFS"  /dev/vg/lv_xfs
 mount /xfs
  
+ 
+ 
+ Create an ext4 file system on a new logical volume of 100MB called lv_ext4. 
+ Mount it permanently under the /ext4 directory. Copy the files previously created into this new space.
+ 
+lvcreate --size 100M --name lv_ext4 /dev/vg
+mkfs.ext4  /dev/vg/lv_ext4
+mkdir  /ext4
+vi /etc/fstab
+/dev/vg/lv_ext4  /ext4   ext4  defaults 1 2
+cp -p  /xfs/.f*  /ext4
+
+ 
+
