@@ -1,0 +1,12 @@
+Create two users: john with uid/gid equal to 2000, password 12345678 and davis with uid/gid equal to 3000,
+password 87654321. Make davis‘ account validity stopping in one month.
+useradd -u 2000 john
+passwd john
+New:password:12345678
+useradd -u 3000 davis
+passwd davis
+New password:87654321
+date -d "+1month"
+usermod -e YYYY-MM-DD davis
+or chage -E YYYY-MM-DD davis
+chage -l davis
