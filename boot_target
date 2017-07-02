@@ -1,0 +1,6 @@
+
+Set the default target to boot into X Window level (previously level 5).
+systemctl set-default graphical.target
+
+
+
