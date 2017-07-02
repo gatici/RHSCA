@@ -1,0 +1,2 @@
+Allow davis (and only davis) to get full access to john‘s home directory.
+setfacl -R -m u:davis:rwx /home/john
