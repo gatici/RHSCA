@@ -1,0 +1,3 @@
+Change the hostname to mycentos.example.com
+
+hostnamectl set-hostname mycentos.example.com
