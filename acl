@@ -1,2 +1,13 @@
 Allow davis (and only davis) to get full access to john‘s home directory.
 setfacl -R -m u:davis:rwx /home/john
+
+
+Create a directory named /common. Allow john and davis to share documents in the /common directory using a group called team. 
+Both of them can read, write and remove documents from the other in this directory but any user not member of the group can’t.
+
+mkdir /common
+groupadd -g 50000 team
+chgrp team /common
+chmod 2770 /common
+usermod -aG team john
+usermod -aG team  davis
